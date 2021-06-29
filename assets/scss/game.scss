@@ -1,0 +1,138 @@
+.game {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  min-height: calc(100vh - 80px);
+  max-width: 100vw;
+
+  .hangman-section {
+    svg {
+      height: 70vh;
+      width: auto;
+
+      #part_1, #part_2, #part_3, #part_4, #part_5, #part_6, #part_7 {
+        opacity: 0;
+        transition: .3s ease-in-out;
+      }
+    }
+  }
+
+  .gui-section {
+    flex: .7;
+    background-color: $color-secondary;
+    padding: 30px;
+    border-radius: 5px;
+
+    .sub-title {
+      font-size: 26px;
+      color: $color-tertiary;
+      margin-bottom: 10px;
+    }
+
+    .gui-buttons {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      .button {
+        font-size: 24px;
+        color: $color-tertiary;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        transition: transform .3s ease-in-out;
+
+        &:hover {
+          transform: scale(1.1) rotate(45deg);
+        }
+      }
+    }
+
+    .gui-word {
+      padding: 40px 0;
+      text-align: center;
+
+      .word {
+        letter-spacing: 10px;
+        font-size: 32px;
+      }
+
+      .alert {
+        margin-top: 10px;
+        text-align: center;
+      }
+
+      .red-alert {
+        color: indianred;
+      }
+
+      .green-alert {
+        color: lightgreen;
+      }
+    }
+
+    .gui-form {
+      margin-top: 20px;
+
+      .form-group {
+        margin-top: 20px;
+
+        label {
+          display: block;
+          font-size: 26px;
+          color: $color-tertiary;
+          margin-bottom: 8px;
+        }
+      }
+
+      input[type="text"] {
+        padding: 12px;
+        border-radius: 10px;
+        background-color: $color-white;
+        color: $color-primary;
+        width: calc(100% - 24px);
+      }
+
+      input[type="submit"] {
+        float: right;
+        border: none;
+        background-color: $color-tertiary;
+        text-align: center;
+        padding: 10px 25px;
+        border-radius: 5px;
+        font-weight: bold;
+        margin-top: 10px;
+        cursor: pointer;
+        outline: none;
+        transition: background-color .3s ease-in-out;
+
+        &:hover {
+          background-color: darken($color-tertiary, 10%);
+        }
+      }
+
+    }
+  }
+}
+
+@media screen and (max-width: 1052px) {
+  .game {
+    .hangman-section {
+      flex-basis: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+
+      svg {
+        width: 30vw;
+        height: auto;
+      }
+    }
+    .gui-section {
+      flex-basis: 100%;
+      margin-bottom: 20px;
+    }
+  }
+}

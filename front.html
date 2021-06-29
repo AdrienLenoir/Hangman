@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hangman</title>
+</head>
+<body>
+<p>Word : <span id="word"></span></p>
+<p>Step : <span id="step"></span></p>
+<p>DisplayedWord : <span id="displayedWord" style="letter-spacing: 5px"></span></p>
+<p>PlayerDisplayName : <span id="playerDisplayname"></span></p>
+<p>PlayerProposedLetter : <span id="playerProposedLetters"></span></p>
+<p>Win : <span id="win"></span></p>
+
+<form id="proposedWordForm">
+    <label for="proposedWord">Proposer un mot</label>
+    <input type="text" name="proposedWord" id="proposedWord">
+
+    <input type="submit" id="proposedWordSubmit" value="Proposer">
+</form>
+
+<button id="resetButton">Reset</button>
+
+<script src="assets/js/game.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

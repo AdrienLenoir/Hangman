@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jeu du pendu</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="container">
+    <header class="main-header">
+        <h1>Jeu du pendu</h1>
+        <ul class="hearts">
+            <li id="heart_1" class="heart-orange"><i class="fas fa-heart"></i></li>
+            <li id="heart_2" class="heart-orange"><i class="fas fa-heart"></i></li>
+            <li id="heart_3" class="heart-orange"><i class="fas fa-heart"></i></li>
+            <li id="heart_4" class="heart-orange"><i class="fas fa-heart"></i></li>
+            <li id="heart_5" class="heart-orange"><i class="fas fa-heart"></i></li>
+            <li id="heart_6" class="heart-orange"><i class="fas fa-heart"></i></li>
+            <li id="heart_7" class="heart-orange"><i class="fas fa-heart"></i></li>
+        </ul>
+    </header>
+    <main class="game">
+        <section class="hangman-section">
+            <svg width="100%" height="100%" viewBox="0 0 550 574" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+            <g transform="matrix(1,0,0,1,-80,-643)">
+                <g id="man" transform="matrix(1,0,0,1,0,480)">
+                    <g transform="matrix(1,0,0,1,78,24.5004)">
+                        <g id="part_1" transform="matrix(1,0,0,0.279763,5.19707,-45.4183)">
+                            <rect x="410" y="854" width="10" height="252" style="fill:rgb(236,236,236);"/>
+                        </g>
+
+                        <g id="part_2" transform="matrix(0.854701,0,0,0.869565,147.778,-357.739)">
+                            <ellipse cx="318.5" cy="772.5" rx="58.5" ry="57.5" style="fill:none;stroke:rgb(236,236,236);stroke-width:11.6px;"/>
+                        </g>
+
+                        <g id="part_3" transform="matrix(1,0,0,0.68254,5,-218.889)">
+                            <rect x="410" y="854" width="10" height="252" style="fill:rgb(236,236,236);"/>
+                        </g>
+
+                        <g id="part_4" transform="matrix(0.819152,0.573576,-0.250804,0.358185,294.537,-155.057)">
+                            <rect x="410" y="854" width="10" height="252" style="fill:rgb(236,236,236);"/>
+                        </g>
+                        <g id="part_5" transform="matrix(-0.819152,0.573576,0.250804,0.358185,545.857,-155.057)">
+                            <rect x="410" y="854" width="10" height="252" style="fill:rgb(236,236,236);"/>
+                        </g>
+
+                        <g transform="matrix(1,0,0,1,0,143.001)">
+                            <g id="part_6" transform="matrix(0.819152,0.573576,-0.250804,0.358185,294.537,-155.057)">
+                                <rect x="410" y="854" width="10" height="252" style="fill:rgb(236,236,236);"/>
+                            </g>
+                            <g id="part_7" transform="matrix(-0.819152,0.573576,0.250804,0.358185,545.857,-155.057)">
+                                <rect x="410" y="854" width="10" height="252" style="fill:rgb(236,236,236);"/>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+                <g id="structure">
+                    <g transform="matrix(1,0,0,1,0,499)">
+                    <g transform="matrix(1,0,0,1,0,-480)">
+                        <rect x="80" y="1161" width="215" height="37" style="fill:#393E46;"/>
+                    </g>
+                </g>
+                    <g transform="matrix(1,0,0,1,0,499)">
+                    <g transform="matrix(1.54156e-16,2.49767,-1,6.42738e-17,1367,-55.814)">
+                        <rect x="80" y="1161" width="215" height="37" style="fill:#393E46;"/>
+                    </g>
+                </g>
+                    <g transform="matrix(1,0,0,1,0,499)">
+                    <g transform="matrix(2.45814,-3.46945e-18,3.41453e-18,1,-95.1512,-999)">
+                        <rect x="80" y="1161" width="215" height="37" style="fill:#393E46;"/>
+                    </g>
+                </g>
+                    <g transform="matrix(1,0,0,1,0,499)">
+                    <g transform="matrix(0.795349,-0.459195,0.27027,0.468122,-204.412,-231.618)">
+                        <rect x="80" y="1161" width="215" height="37" style="fill:#393E46;"/>
+                    </g>
+                </g>
+                </g>
+            </g>
+        </svg>
+        </section>
+        <section class="gui-section">
+            <div class="gui-buttons">
+                <button class="button" id="statsButton">
+                    <i class="fas fa-chart-pie"></i>
+                </button>
+                <button class="button resetButton">
+                    <i class="fas fa-sync"></i>
+                </button>
+            </div>
+
+            <div class="gui-word">
+                <h2 class="sub-title">Trouvez le mot</h2>
+                <p class="word" id="displayedWord"></p>
+                <p class="alert" id="alert"></p>
+            </div>
+
+            <div class="gui-player-letter">
+                <h2 class="sub-title">Lettres déjà utilisées</h2>
+                <p class="letters" id="playerProposedLetters"></p>
+            </div>
+
+            <form class="gui-form" id="proposedWordForm">
+                <div class="form-group">
+                    <label for="proposedWord">Proposez un mot</label>
+                    <input type="text" name="proposedWord" id="proposedWord">
+                </div>
+
+                <input type="submit" id="proposedWordSubmit" value="Proposer">
+            </form>
+
+        </section>
+    </main>
+</div>
+
+<div class="modal" id="loseModal">
+    <div class="modal-wrapper">
+        <h3>PERDU !</h3>
+        <p>Dommage <i class="fas fa-sad-tear"></i></p>
+        <p>Le mot étais <span id="loseShowWord"></span></p>
+
+        <button class="modal-button resetButton">Rejouer</button>
+    </div>
+</div>
+<div class="modal" id="winModal">
+    <div class="modal-wrapper">
+        <h3>GAGNER !</h3>
+        <p>Félicitation <i class="fas fa-grin-stars"></i></p>
+
+        <button class="modal-button resetButton">Rejouer</button>
+    </div>
+</div>
+<div class="modal" id="statsModal">
+    <div class="modal-wrapper">
+        <h3>Vos statistiques</h3>
+        <p>Vistoire(s) : <span id="playerWin"></span></p>
+        <p>Défaite(s) : <span id="playerLose"></span></p>
+
+        <button class="modal-button" onclick="closeModal('statsModal')">Fermer</button>
+    </div>
+</div>
+
+<script src="assets/js/game.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

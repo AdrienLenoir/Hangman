@@ -1,0 +1,291 @@
+/* RESET CSS
+ * --------------------------------------- */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre,
+form, fieldset, input, textarea, p, blockquote, th, td, span {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+fieldset, img {
+  border: 0;
+}
+
+strong {
+  font-weight: bold;
+}
+
+ol, ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+/* BASE
+ * --------------------------------------- */
+body {
+  background-color: #222831;
+  color: #EEEEEE;
+  font-size: 24px;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  transition: box-shadow 1s ease-in-out;
+}
+
+.container {
+  position: relative;
+  width: 1400px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media screen and (max-width: 1618px) {
+  .container {
+    width: 1400px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media screen and (max-width: 1525px) {
+  .container {
+    width: 1300px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media screen and (max-width: 1410px) {
+  .container {
+    width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media screen and (max-width: 1244px) {
+  .container {
+    width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media screen and (max-width: 1052px) {
+  .container {
+    width: 800px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media screen and (max-width: 848px) {
+  .container {
+    width: calc(100% - 40px);
+  }
+}
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;
+  height: 80px;
+  line-height: 80px;
+}
+.main-header h1 {
+  color: #FFD369;
+  text-transform: uppercase;
+  font-size: 35px;
+}
+.main-header .hearts {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.main-header .hearts li:not(:first-child) {
+  margin-left: 8px;
+}
+.main-header .hearts li i {
+  color: #EEEEEE;
+  font-size: 24px;
+}
+.main-header .hearts .heart-orange i {
+  color: #FFD369;
+}
+
+@media screen and (max-width: 1052px) {
+  .main-header h1 {
+    font-size: 28px;
+  }
+  .main-header .hearts li i {
+    font-size: 20px;
+  }
+}
+.game {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  min-height: calc(100vh - 80px);
+  max-width: 100vw;
+}
+.game .hangman-section svg {
+  height: 70vh;
+  width: auto;
+}
+.game .hangman-section svg #part_1, .game .hangman-section svg #part_2, .game .hangman-section svg #part_3, .game .hangman-section svg #part_4, .game .hangman-section svg #part_5, .game .hangman-section svg #part_6, .game .hangman-section svg #part_7 {
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+.game .gui-section {
+  flex: 0.7;
+  background-color: #393E46;
+  padding: 30px;
+  border-radius: 5px;
+}
+.game .gui-section .sub-title {
+  font-size: 26px;
+  color: #FFD369;
+  margin-bottom: 10px;
+}
+.game .gui-section .gui-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.game .gui-section .gui-buttons .button {
+  font-size: 24px;
+  color: #FFD369;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+.game .gui-section .gui-buttons .button:hover {
+  transform: scale(1.1) rotate(45deg);
+}
+.game .gui-section .gui-word {
+  padding: 40px 0;
+  text-align: center;
+}
+.game .gui-section .gui-word .word {
+  letter-spacing: 10px;
+  font-size: 32px;
+}
+.game .gui-section .gui-word .alert {
+  margin-top: 10px;
+  text-align: center;
+}
+.game .gui-section .gui-word .red-alert {
+  color: indianred;
+}
+.game .gui-section .gui-word .green-alert {
+  color: lightgreen;
+}
+.game .gui-section .gui-form {
+  margin-top: 20px;
+}
+.game .gui-section .gui-form .form-group {
+  margin-top: 20px;
+}
+.game .gui-section .gui-form .form-group label {
+  display: block;
+  font-size: 26px;
+  color: #FFD369;
+  margin-bottom: 8px;
+}
+.game .gui-section .gui-form input[type=text] {
+  padding: 12px;
+  border-radius: 10px;
+  background-color: #EEEEEE;
+  color: #222831;
+  width: calc(100% - 24px);
+}
+.game .gui-section .gui-form input[type=submit] {
+  float: right;
+  border: none;
+  background-color: #FFD369;
+  text-align: center;
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease-in-out;
+}
+.game .gui-section .gui-form input[type=submit]:hover {
+  background-color: #ffc436;
+}
+
+@media screen and (max-width: 1052px) {
+  .game .hangman-section {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .game .hangman-section svg {
+    width: 30vw;
+    height: auto;
+  }
+  .game .gui-section {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+  }
+}
+.modal {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.modal .modal-wrapper {
+  background-color: #FFD369;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  color: #222831;
+  min-height: 35vh;
+  min-width: 50vw;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+.modal .modal-wrapper h3 {
+  font-size: 40px;
+  color: #b68000;
+  margin-bottom: 10px;
+}
+.modal .modal-wrapper .modal-button {
+  float: right;
+  border: none;
+  background-color: #ffb503;
+  text-align: center;
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease-in-out;
+  margin-top: 30px;
+}
+.modal .modal-wrapper .modal-button:hover {
+  background-color: #cf9200;
+}
+
+/*# sourceMappingURL=style.css.map */
