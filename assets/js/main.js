@@ -31,8 +31,6 @@ Array.from(document.getElementsByClassName("resetButton")).forEach(playAgainButt
 })
 
 document.getElementById("statsButton").addEventListener("click", () => {
-    console.log(game.player.getLose())
-    console.log(localStorage.getItem("lose"))
     playerWinEl.innerText = game.player.getWin()
     playerLoseEl.innerText = game.player.getLose()
     openModal("statsModal")
@@ -170,5 +168,3 @@ game.gameEvents.addEventListener("player_lose_count_change", (event) => {
     localStorage.getItem("win")
     playerLoseEl.innerText = event.player.getLose()
 })
-
-console.log(localStorage.getItem("win"))

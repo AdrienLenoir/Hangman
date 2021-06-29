@@ -22,7 +22,7 @@ class GameEvents {
 class Game {
     constructor() {
         this.gameEvents = new GameEvents(this)
-        this.player = new Player(this,"Adrien")
+        this.player = new Player(this)
         this.win = false
         this.lose = false
         this.stepCount = 0
@@ -142,9 +142,8 @@ class Game {
 }
 
 class Player {
-    constructor(game, displayname) {
+    constructor(game) {
         this.game = game
-        this.displayname = displayname
         this.letters = []
 
         if (localStorage.getItem("win") == undefined)
